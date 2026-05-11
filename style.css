@@ -1,0 +1,11 @@
+* {
+    box-sizing: border-box;  /* this includes the border as the square size */
+}
+
+#container {
+   display: flex;
+   flex-wrap: wrap; 
+   box-sizing: border-box;
+   width: 800px;
+   height: 800px;
+}
