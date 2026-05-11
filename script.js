@@ -6,6 +6,11 @@ for (let i = 1; i <= gridSize ; i++){
     square.style.cssText = "width:50px ; height:50px; border:2px solid black";
    
     container.appendChild(square);
+
+    function changeColor () {
+        square.style.cssText = "width:50px ; height:50px; border:2px solid black ; background-color: black"; //you're not replacing the cssText, you're adding to it! 
+    }
+    square.addEventListener('mouseenter' , changeColor ); //its inside the loop cus the variable square only exists inside
 }
 
 
