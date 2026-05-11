@@ -18,8 +18,14 @@ heading.appendChild(button);
 button.textContent = "new grid size";
 button.style.cssText ="color:#f06e95; background-color:#276ce4"
 
-function popup () {
-    prompt ("Enter a number less than 100 for the new grid:")
-}
 
+function popup () {
+    let input = prompt ("Enter a positive number less than 100 for the new grid:" , " ")
+    if (input > 100 || input < 1) {
+        alert ("pick a positive number");
+    } else {
+    // replace the grid in the container
+    container.replaceChildren();
+    }
+}
 button.addEventListener ("click" , popup);
