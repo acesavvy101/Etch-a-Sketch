@@ -13,7 +13,13 @@ for (let i = 1; i <= gridSize ; i++){
     square.addEventListener('mouseenter' , changeColor ); //its inside the loop cus the variable square only exists inside
 }
 
+const button = document.createElement("button");
+heading.appendChild(button);
+button.textContent = "new grid size";
+button.style.cssText ="color:#f06e95; background-color:#276ce4"
 
+function popup () {
+    prompt ("Enter a number less than 100 for the new grid:")
+}
 
-
-
+button.addEventListener ("click" , popup);
