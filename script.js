@@ -21,7 +21,8 @@ button.style.cssText ="color:#f06e95; background-color:#276ce4"
 
 function popup () {
     let input = prompt ("Enter a positive number less than 100 for the new grid:" , " ")
-    if (input > 100 || input < 1 || input == "string") {
+    if (input > 100 || input < 1 || isNaN(input)) {
+        // isNaN() returns true if the value is not a valid number.
         alert ("pick a positive number");
     } else {
     // replace the grid in the container
