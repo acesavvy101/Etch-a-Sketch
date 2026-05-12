@@ -3,7 +3,7 @@ const gridSize = 16 * 16;
 
 for (let i = 1; i <= gridSize ; i++){ 
     const square = document.createElement("div"); // create the element, and append inside the loop
-    square.style.cssText = "width:50px ; height:50px; border:2px solid black";
+    square.style.cssText = "width:50px ; height:50px; border:2px solid black"; //change this hardcoded value ltr !!
    
     container.appendChild(square);
 
@@ -37,8 +37,17 @@ function popup () {
     but i wasnt sure if it was going to work or not */
     container.appendChild(newGrid);
 
+    function randomColor () {
+        const r = Math.floor(Math.random() * 256);
+        const g = Math.floor(Math.random() * 256);
+        const b = Math.floor(Math.random() * 256);
+        return "rgb("+r+","+g+","+b+")";
+        //returns a colour string so newChangeColor() can use it
+    } 
+
     function newChangeColor () {
-        newGrid.style.cssText = `width: ${newSize}px; height:${newSize}px; border:2px solid black ; background-color: black`;
+        newGrid.style.cssText = `width: ${newSize}px; height:${newSize}px; border:2px solid black ; background-color: ${randomColor()}`;
+        // the new size is a variable, whereas the randomColor is a function so u have to include the () !!
     }
     newGrid.addEventListener('mouseenter' , newChangeColor);    
     }
