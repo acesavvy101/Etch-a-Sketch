@@ -55,9 +55,9 @@ function popup () {
         }
     }
 }
-
+//opacity: ${changeOpacity()
     function newChangeColor () {
-        newGrid.style.cssText = `width: ${newSize}px; height:${newSize}px; border:2px solid black ; background-color: ${randomColor()}; opacity: ${changeOpacity()}`;
+        newGrid.style.cssText = `width: ${newSize}px; height:${newSize}px; border:2px solid black ; background-color: ${randomColor()}`;
         // the new size is a variable, whereas the randomColor is a function so u have to include the () !!
     }
     newGrid.addEventListener('mouseenter' , newChangeColor);    
