@@ -68,8 +68,34 @@ function popupColor () {
     }
     }
 }
+//square size must shrink as grid increases, control squares per side not total squares created
 buttonColor.addEventListener ("click" , popupColor);
 
+function popupBlack () {
+    let input = prompt ("Enter a positive number less than 100 for the new grid:" , " ")
+    if (input > 100 || input < 1 || isNaN(input)) {
+        // isNaN() returns true if the value is not a valid number.
+        alert ("pick a positive number");
+    } else {
+    // replace the grid in the container
+    const newGridSize = input * input;
+    container.replaceChildren(); //to delete the previous element
+    const newSize = 800/input; //you're not making new squares, youre just dividng up the space into smaller squares according to input
 
+    for (let i = 1; i <= newGridSize ; i++) {
+    const newGrid = document.createElement("div");
+    newGrid.style.cssText = `width: ${newSize}px; height:${newSize}px; border:2px solid black`;
+    /* line 34 Previous Syntax Error : i had a feeling u needed to use `` and ${} for the variable 
+    but i wasnt sure if it was going to work or not */
+    container.appendChild(newGrid);
 
-//square size must shrink as grid increases, control squares per side not total squares created
+    function colorBlack () {
+        newGrid.style.cssText = `width: ${newSize}px; height:${newSize}px; border:2px solid black ; background-color: black`
+    }
+    
+    newGrid.addEventListener('mouseenter' , colorBlack); }
+}
+}
+
+buttonBlack.addEventListener('click', popupBlack);
+
