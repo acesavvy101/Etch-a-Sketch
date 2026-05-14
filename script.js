@@ -13,13 +13,17 @@ for (let i = 1; i <= gridSize ; i++){
     square.addEventListener('mouseenter' , changeColor ); //its inside the loop cus the variable square only exists inside
 }
 
-const button = document.createElement("button");
-heading.appendChild(button);
-button.textContent = "new grid size";
-button.style.cssText ="color:#f06e95; background-color:#276ce4"
+const buttonColor = document.createElement("button");
+heading.appendChild(buttonColor);
+buttonColor.textContent = "new color grid";
+buttonColor.style.cssText ="color:#f06e95; background-color:#276ce4"
 
+const buttonBlack = document.createElement("button");
+heading.appendChild(buttonBlack);
+buttonBlack.textContent = "new black grid";
+buttonBlack.style.cssText ="color:white; background-color:black"
 
-function popup () {
+function popupColor () {
     let input = prompt ("Enter a positive number less than 100 for the new grid:" , " ")
     if (input > 100 || input < 1 || isNaN(input)) {
         // isNaN() returns true if the value is not a valid number.
@@ -64,6 +68,8 @@ function popup () {
     }
     }
 }
-button.addEventListener ("click" , popup);
+buttonColor.addEventListener ("click" , popupColor);
+
+
 
 //square size must shrink as grid increases, control squares per side not total squares created
